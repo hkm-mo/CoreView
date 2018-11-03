@@ -102,6 +102,11 @@ class View {
 		$this->layout = array('name' => $layout_name, 'vars' => $vars);
 	}
 
+	public function clear_layout()
+	{
+		$this->layout = NULL;
+	}
+	
 	private function assign($name, $value)
 	{
 		$this->placement[$name] = $value;
