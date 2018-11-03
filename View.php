@@ -25,7 +25,6 @@ class View {
 	protected $view_path;
 	protected $is_partal_view;
 
-	public $ttl = 600;
 	public $script;
 	public $meta;
 	
