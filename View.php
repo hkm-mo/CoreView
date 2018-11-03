@@ -23,7 +23,6 @@ class View {
 	protected $keyword = array();
 	protected $title = array();
 	protected $view_path;
-	protected $is_partal_view;
 
 	public $script;
 	public $meta;
@@ -36,7 +35,6 @@ class View {
 		$this->title_separator = $config['title_separator'];
 		$this->base_path_symbol = $config['base_path_symbol'];
 		$this->view_path = $config['view_path'];
-		$this->is_partal_view = $config['is_partal_view'];
 
 		$this->script = new Script_manager();
 		$this->meta = new Meta_manager();
@@ -101,10 +99,9 @@ class View {
 	
 	public function set_layout($layout_name, $vars = array())
 	{
-		if(!$this->is_partal_view)
-			$this->layout = array('name' => $layout_name, 'vars' => $vars);
+		$this->layout = array('name' => $layout_name, 'vars' => $vars);
 	}
-	
+
 	private function assign($name, $value)
 	{
 		$this->placement[$name] = $value;
